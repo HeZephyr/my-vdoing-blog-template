@@ -36,7 +36,7 @@ push_branch=main # 推送的分支
 echo 'unique-pure.github.io' > CNAME
 git add -A
 git commit -m "deploy: $commit_info"
-git push --set-upstream origin $push_branch
+git push -u origin $push_branch
 cp -rf .git ../
 cd -
 
