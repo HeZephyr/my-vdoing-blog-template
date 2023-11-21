@@ -20,7 +20,7 @@ cd $dist_path
 
 # 将./.git移动到./docs/.vuepress/dist/.git
 if [ -d ../.git ]; then
-  mv ../.git .
+  cp -rf ../.git .
 else
   git init
   push_address=git@github.com:unique-pure/unique-pure.github.io.git # git提交地址
@@ -36,8 +36,8 @@ push_branch=main # 推送的分支
 echo 'unique-pure.github.io' > CNAME
 git add -A
 git commit -m "deploy: $commit_info"
-git push --set-upstream orgin $push_branch
-mv .git ../
+git push --set-upstream origin $push_branch
+cp -rf .git ../
 cd -
 
 
