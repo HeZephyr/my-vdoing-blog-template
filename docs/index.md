@@ -84,3 +84,6 @@ features: # 可选的
 - **GitHub**: <https://github.com/xugaoyi>
 
 </br>  -->
+<ClientOnly>
+  <WebInfo/>
+</ClientOnly>
