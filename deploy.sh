@@ -8,7 +8,7 @@ git add .
 if git diff-index --quiet HEAD --; then
   echo "blog No changes to commit."
 else
-  git commit -m $1
+  git commit -m "$1"
   git push -u origin main
 fi
 
