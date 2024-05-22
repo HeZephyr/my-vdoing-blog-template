@@ -3,15 +3,6 @@
 # 确保脚本抛出遇到的错误
 set -e
 
-# 推送博客
-git add .
-if git diff-index --quiet HEAD --; then
-  echo "blog No changes to commit."
-else
-  git commit -m "$1"
-  git push -u origin main
-fi
-
 # 生成静态文件
 npm run build
 dist_path=docs/.vuepress/dist # 打包生成的文件夹路径
@@ -39,5 +30,13 @@ git commit -m "deploy: $commit_info"
 git push -u origin $push_branch
 cp -rf .git ../
 cd -
+# 推送博客
+git add .
+if git diff-index --quiet HEAD --; then
+  echo "blog No changes to commit."
+else
+  git commit -m "$1"
+  git push -u origin main
+fi
 
 
